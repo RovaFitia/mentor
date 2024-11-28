@@ -8,6 +8,17 @@ import {
 } from 'unocss'
 
 export default defineConfig({
+    include: ['./src/**/*.{vue,js,ts,css}'],
+    theme: {
+        colors: {
+            dark: '#252525',
+            carbon: '#333333',
+            'medium-gray': '#4B4B4B',
+            'light-gray': '#F5F5F5',
+            whitesmoke: '#FAFAF8',
+            white: '#FFFFFF',
+        },
+    },
     presets: [
         presetUno,
         presetIcons(),
@@ -15,8 +26,8 @@ export default defineConfig({
         presetWebFonts({
             provider: 'bunny',
             fonts: {
-                primary: ['Outfit', 'sans-serif'],
-                secondary: ['Roboto', 'sans-serif'],
+                title: ['Outfit', 'sans-serif'],
+                base: ['Roboto', 'sans-serif'],
             },
         }),
     ],
@@ -29,6 +40,12 @@ export default defineConfig({
                 'flex-direction': 'column',
                 gap: `${parseInt(d) * 0.25}rem`,
             }),
+        ],
+        [
+            /^text-(.*)$/,
+            ([, c], { theme }) => {
+                if (theme.colors[c]) return { color: theme.colors[c] }
+            },
         ],
     ],
 })
