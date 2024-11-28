@@ -4,6 +4,10 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque minus doloremque soluta reprehenderit ad,
             recusandae accusantium asperiores distinctio, ducimus harum iure aliquam delectus. Architecto ratione natus
             ab
-            repellendus at corporis!</p>
+            repellendus at corporis!
+
+
+        </p>
+        <div class="i-ri-account-pin-circle-fill"></div>
     </div>
 </template>
