@@ -8,7 +8,9 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-    include: ['./src/**/*.{vue,js,ts,css}'],
+    shortcuts: {
+        btn: 'flex items-center justify-center py-2 px-4 rounded-2',
+    },
     theme: {
         colors: {
             dark: '#252525',
@@ -45,6 +47,13 @@ export default defineConfig({
             /^text-(.*)$/,
             ([, c], { theme }) => {
                 if (theme.colors[c]) return { color: theme.colors[c] }
+            },
+        ],
+
+        [
+            /^border-(.*)$/,
+            ([, c], { theme }) => {
+                if (theme.colors[c]) return { 'border-color': theme.colors[c] }
             },
         ],
     ],
