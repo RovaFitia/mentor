@@ -15,7 +15,8 @@ export default defineConfig({
         presetWebFonts({
             provider: 'bunny',
             fonts: {
-                funny: ['Inter', 'sans-serif'],
+                primary: ['Outfit', 'sans-serif'],
+                secondary: ['Roboto', 'sans-serif'],
             },
         }),
     ],

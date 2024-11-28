@@ -11,3 +11,5 @@
         <div class="i-ri-account-pin-circle-fill"></div>
     </div>
 </template>
+<script setup lang="ts">
+</script>
