@@ -7,14 +7,16 @@
 
         <p class="text-carbon font-base font-500 text-base">Paragraph</p>
 
-        <a href="#" class="text-medium-gray font-base font-500 text-base">Link</a>
+        <a href="#" class=" text-medium-gray font-base font-500 text-base">Link</a>
 
         <div class="flex gap-3">
-            <button class="btn border border-solid border-dark">Sign up</button>
-            <button class="btn bg-dark text-white ">Sign on</button>
+            <MainButton variant="carbon" hover>Sign up</MainButton>
+            <button class="btn text-carbon border-carbon hover:(bg-carbon text-white animate 0.5s)">Holla</button>
         </div>
 
     </div>
 </template>
 <script setup lang="ts">
+import MainButton from "./components/MainButton.vue";
+
 </script>

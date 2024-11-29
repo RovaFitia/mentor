@@ -9,7 +9,10 @@ import {
 
 export default defineConfig({
     shortcuts: {
-        btn: 'flex items-center justify-center py-2 px-4 rounded-2',
+        btn: 'flex items-center justify-center py-2 px-4 rounded-2 gap-2 border border-solid',
+        'btn-sm': 'text-sm',
+        'btn-md': 'text-md',
+        'btn-lg': 'text-2xl',
     },
     theme: {
         colors: {
@@ -19,6 +22,7 @@ export default defineConfig({
             'light-gray': '#F5F5F5',
             whitesmoke: '#FAFAF8',
             white: '#FFFFFF',
+            red: '#FF0000',
         },
     },
     presets: [
