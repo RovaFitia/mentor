@@ -1,9 +1,8 @@
 <template>
     <div class="container mx-auto stack-3 mt-10">
-
-        <h1 class="text-dark font-title font-700 text-4xl">Heading 1</h1>
-        <h2 class="text-dark font-title font-700 text-3xl">Heading 2</h2>
-        <h3 class="text-dark font-title font-700 text-2xl">Heading 3</h3>
+        <Heading tag="h1" size="4" variant="dark">Heading 1</Heading>
+        <Heading tag="h2" size="3" variant="dark">Heading 2</Heading>
+        <Heading tag="h3" size="2" variant="dark">Heading 3</Heading>
 
         <p class="text-carbon font-base font-500 text-base">Paragraph</p>
 
@@ -18,5 +17,6 @@
 </template>
 <script setup lang="ts">
 import Button from "./components/Button.vue";
+import Heading from "./components/Heading.vue";
 
 </script>

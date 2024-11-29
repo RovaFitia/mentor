@@ -22,7 +22,6 @@ export default defineConfig({
             'light-gray': '#F5F5F5',
             whitesmoke: '#FAFAF8',
             white: '#FFFFFF',
-            red: '#FF0000',
         },
     },
     presets: [
