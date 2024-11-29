@@ -10,13 +10,13 @@
         <a href="#" class=" text-medium-gray font-base font-500 text-base">Link</a>
 
         <div class="flex gap-3">
-            <MainButton>Sign up</MainButton>
+            <Button icon="i-ri-home-5-line" variant="light-gray">Sign up</Button>
 
         </div>
 
     </div>
 </template>
 <script setup lang="ts">
-import MainButton from "./components/Button.vue";
+import Button from "./components/Button.vue";
 
 </script>
