@@ -10,13 +10,13 @@
         <a href="#" class=" text-medium-gray font-base font-500 text-base">Link</a>
 
         <div class="flex gap-3">
-            <MainButton variant="carbon" hover>Sign up</MainButton>
-            <button class="btn text-carbon border-carbon hover:(bg-carbon text-white animate 0.5s)">Holla</button>
+            <MainButton>Sign up</MainButton>
+
         </div>
 
     </div>
 </template>
 <script setup lang="ts">
-import MainButton from "./components/MainButton.vue";
+import MainButton from "./components/Button.vue";
 
 </script>
