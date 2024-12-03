@@ -10,11 +10,15 @@
             <div>
                 <ul class="flex items-center gap-4">
                     <li v-for="link in Links" :key="link.name" class="flex items-center gap-2">
-                        <component v-if="link.icon" :is="link.icon" class="w-4 h-4 text-medium-gray hover:text-dark">
-                        </component>
-                        <a href="link.href" class="font-base text-medium-gray text-4 hover:text-dark">
-                            {{ link.name }}
-                        </a>
+                        <RouterLink :to="link.to" class="font-base text-medium-gray text-4 hover:text-dark">{{ link.name
+                            }}</RouterLink>
+                    </li>
+
+                    <li v-if="Btns.length > 0" class="flex items-center gap-2">
+                        <template v-for="btn in Btns" :key="btn.name">
+                            <component v-if="btn.icon" :is="btn.icon"
+                                class="w-5 h-5 text-medium-gray hover:text-dark" />
+                        </template>
                     </li>
                 </ul>
             </div>
@@ -24,13 +28,18 @@
 
 <script setup lang="ts">
 import Heading from '../components/Heading.vue'
-import BlogIcon from '../assets/icons/blog-icon.vue'
+import DiscordIcon from '../assets/icons/discord-icon.vue'
+import GitHubIcon from '../assets/icons/github-icon.vue'
 
 const Links = [
-    { name: 'About', href: '#', icon: BlogIcon },
-    { name: 'Blog', href: '#', icon: 'mdi-blog' },
-    { name: 'GitHub', href: '#', icon: 'mdi-github' },
-    { name: 'WhatsApp', href: '#', icon: 'mdi-whatsapp' },
+    { name: 'About', to: 'about' },
+    { name: 'Blog', to: 'blog' },
+    { name: 'Contact', to: 'contact' },
+]
+
+const Btns = [
+    { name: 'GitHub', href: '#', icon: GitHubIcon },
+    { name: 'Discord', href: '#', icon: DiscordIcon },
 ]
 
 </script>

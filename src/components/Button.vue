@@ -1,9 +1,9 @@
 <template>
-    <button :class="classes" :type="type">
+    <a :href="link" :class="classes" :type="type">
         <i v-if="icon && iconPosition === 'left'" :class="iconClass" aria-hidden="true"></i>
         <slot></slot>
         <i v-if="icon && iconPosition === 'right'" :class="iconClass" aria-hidden="true"></i>
-    </button>
+    </a>
 </template>
 
 <script setup lang="ts">
@@ -17,6 +17,8 @@ type ButtonProps = {
     type?: 'button' | 'submit' | 'reset'
     hover?: boolean
     iconPosition?: 'left' | 'right'
+    link?: string
+    iconColor?: 'dark' | 'medium-gray' | 'carbon' | 'light-gray' | 'whitesmoke'
 }
 
 // Set default props
@@ -27,6 +29,8 @@ const props = withDefaults(defineProps<ButtonProps>(), {
     type: 'button',
     hover: true,
     iconPosition: 'right',
+    link: '#',
+    iconColor: "medium-gray",
 })
 
 // Map variant to text and hover styles
@@ -34,15 +38,15 @@ const variantStyles = computed(() => {
     const variants = {
         dark: {
             text: 'text-white bg-dark',
-            hover: 'hover:(bg-dark/80)'
+            hover: 'hover:(bg-dark/80 border-dark/80)'
         },
         'medium-gray': {
             text: 'text-white bg-medium-gray',
-            hover: 'hover:(bg-medium-gray/80)'
+            hover: 'hover:(bg-medium-gray/80 border-medium-gray/80)'
         },
         carbon: {
             text: 'text-white bg-carbon ',
-            hover: 'hover:(bg-carbon/80)'
+            hover: 'hover:(bg-carbon/80 border-carbon/80)'
         },
         'light-gray': {
             text: 'text-medium-gray bg-white border-light-gray',
@@ -70,6 +74,6 @@ const classes = computed(() => {
 
 // Icon class
 const iconClass = computed(() => {
-    return `${props.icon} text-xl`
+    return `${props.icon} text-xl text-${props.iconColor}`
 })
 </script>
