@@ -14,12 +14,13 @@
                             }}</RouterLink>
                     </li>
 
-                    <li v-if="Btns.length > 0" class="flex items-center gap-2">
-                        <template v-for="btn in Btns" :key="btn.name">
+
+                    <template v-for="btn in Btns" :key="btn.name">
+                        <li v-if="Btns.length > 0" class="flex items-center gap-2">
                             <component v-if="btn.icon" :is="btn.icon"
                                 class="w-5 h-5 text-medium-gray hover:text-dark" />
-                        </template>
-                    </li>
+                        </li>
+                    </template>
                 </ul>
             </div>
         </div>
