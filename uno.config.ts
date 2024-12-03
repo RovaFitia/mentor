@@ -42,6 +42,13 @@ export default defineConfig({
             whitesmoke: '#FAFAF8',
             white: '#FFFFFF',
         },
+        breakpoints: {
+            sm: '300px',
+            md: '576px',
+            lg: '992px',
+            xl: '1280px',
+            '2xl': '1536px',
+        },
     },
     presets: [
         presetUno,
