@@ -334,6 +334,59 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   }
 }
 
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs'
+  info: {
+    description: ''
+    displayName: 'Blog'
+    pluralName: 'blogs'
+    singularName: 'blog'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    category: Schema.Attribute.Relation<'manyToOne', 'api::categorie.categorie'>
+    Code: Schema.Attribute.RichText
+    Content: Schema.Attribute.Text
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private
+    publishedAt: Schema.Attribute.DateTime
+    Title: Schema.Attribute.String
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+  }
+}
+
+export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
+  collectionName: 'categories'
+  info: {
+    displayName: 'Categorie'
+    pluralName: 'categories'
+    singularName: 'categorie'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::categorie.categorie'> &
+      Schema.Attribute.Private
+    Name: Schema.Attribute.String
+    publishedAt: Schema.Attribute.DateTime
+    slug: Schema.Attribute.UID<'Name'>
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+  }
+}
+
 export interface PluginContentReleasesRelease extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases'
   info: {
@@ -761,6 +814,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken
       'admin::transfer-token-permission': AdminTransferTokenPermission
       'admin::user': AdminUser
+      'api::blog.blog': ApiBlogBlog
+      'api::categorie.categorie': ApiCategorieCategorie
       'plugin::content-releases.release': PluginContentReleasesRelease
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction
       'plugin::i18n.locale': PluginI18NLocale
