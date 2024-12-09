@@ -1,10 +1,12 @@
 <template>
-    <nav class="py-5 border-b border-black/10 bg-white">
+    <nav class="py-4 border-b border-black/10 bg-white">
         <div class="container mx-auto flex items-center justify-between">
 
             <div class="flex items-center justify-center gap-2">
-                <img src="../../public/Logo/codeur-logo.png" alt="logo" class="w-[28px] h-[28px]">
-                <Heading tag="div" size="3" variant="carbon" font="title">Mentor</Heading>
+                <RouteLink to="/" class="flex items-center gap-2">
+                    <img src="../../public/Logo/codeur-logo.png" alt="logo" class="w-[28px] h-[28px]">
+                    <Heading tag="div" size="2" variant="carbon" font="title">Mentor</Heading>
+                </RouteLink>
             </div>
 
             <div>
@@ -35,7 +37,6 @@ import GitHubIcon from '../assets/icons/github-icon.vue'
 const Links = [
     { name: 'About', to: 'about' },
     { name: 'Blog', to: 'blog' },
-    { name: 'Contact', to: 'contact' },
 ]
 
 const Btns = [
